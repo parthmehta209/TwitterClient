@@ -1,0 +1,15 @@
+Consumer Key (API Key)	Mw3YnUtfLAmjv3ytlyChuAZjc
+Consumer Secret (API Secret)	GMbqvoGndce7L9aCR1JmDF0jN78doIt1HzH8Zn5k7V6KKPda4N
+
+Base URL: 
+https://api.twitter.com/1.1/
+
+API Endpoints: 
+    Get the home timeline 
+    
+    GET statuses/home_timeline.json    
+    count=25
+    since_id=1
+    
+    
+    Compose a tweet

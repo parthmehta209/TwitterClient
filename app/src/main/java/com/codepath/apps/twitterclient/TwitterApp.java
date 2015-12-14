@@ -1,6 +1,8 @@
-package com.codepath.apps.restclienttemplate;
+package com.codepath.apps.twitterclient;
 
 import android.content.Context;
+
+import com.codepath.apps.twitterclient.net.TwitterRestClient;
 
 /*
  * This is the Android application itself and is used to configure various settings
@@ -11,16 +13,16 @@ import android.content.Context;
  *     // use client to send requests to API
  *
  */
-public class RestApplication extends com.activeandroid.app.Application {
+public class TwitterApp extends com.activeandroid.app.Application {
 	private static Context context;
 
 	@Override
 	public void onCreate() {
 		super.onCreate();
-		RestApplication.context = this;
+		TwitterApp.context = this;
 	}
 
-	public static RestClient getRestClient() {
-		return (RestClient) RestClient.getInstance(RestClient.class, RestApplication.context);
+	public static TwitterRestClient getRestClient() {
+		return (TwitterRestClient) TwitterRestClient.getInstance(TwitterRestClient.class, TwitterApp.context);
 	}
 }

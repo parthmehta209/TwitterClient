@@ -1,14 +1,14 @@
-package com.codepath.apps.restclienttemplate.models;
-
-import java.util.List;
-
-import org.json.JSONException;
-import org.json.JSONObject;
+package com.codepath.apps.twitterclient.models;
 
 import com.activeandroid.Model;
 import com.activeandroid.annotation.Column;
 import com.activeandroid.annotation.Table;
 import com.activeandroid.query.Select;
+
+import org.json.JSONException;
+import org.json.JSONObject;
+
+import java.util.List;
 
 /*
  * This is a temporary, sample model that demonstrates the basic structure
@@ -17,17 +17,17 @@ import com.activeandroid.query.Select;
  * 
  */
 @Table(name = "items")
-public class SampleModel extends Model {
+public class Item extends Model {
 	// Define table fields
 	@Column(name = "name")
 	private String name;
 
-	public SampleModel() {
+	public Item() {
 		super();
 	}
 
 	// Parse model from JSON
-	public SampleModel(JSONObject object){
+	public Item(JSONObject object){
 		super();
 
 		try {
@@ -43,11 +43,11 @@ public class SampleModel extends Model {
 	}
 
 	// Record Finders
-	public static SampleModel byId(long id) {
-		return new Select().from(SampleModel.class).where("id = ?", id).executeSingle();
+	public static Item byId(long id) {
+		return new Select().from(Item.class).where("id = ?", id).executeSingle();
 	}
 
-	public static List<SampleModel> recentItems() {
-		return new Select().from(SampleModel.class).orderBy("id DESC").limit("300").execute();
+	public static List<Item> recentItems() {
+		return new Select().from(Item.class).orderBy("id DESC").limit("300").execute();
 	}
 }
